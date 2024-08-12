@@ -90,6 +90,12 @@ TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# Additional binaries & libraries needed for recovery
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libkeymaster4 \
+    libkeymaster41 \
+    libpuresoftkeymasterdevice
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
 
@@ -115,7 +121,16 @@ TW_DEFAULT_BRIGHTNESS := 1200
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_LIBRESETPROP :=true
+TW_INCLUDE_RESETPROP := true
+TW_BACKUP_EXCLUSIONS := /data/fonts
+TW_NO_FASTBOOT_BOOT := true
+TW_INCLUDE_LPTOOLS := true
+TW_INCLUDE_LPDUMP := true
+TW_INCLUDE_PYTHON := true
 
-TW_RECOVERY_ADDITIONAL_RELINK_FILES += \
+
+TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
-
