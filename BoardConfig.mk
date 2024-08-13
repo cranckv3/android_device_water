@@ -158,6 +158,7 @@ TW_NO_FASTBOOT_BOOT := true
 TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_LPDUMP := true
 TW_INCLUDE_PYTHON := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 
 # Additional Target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
