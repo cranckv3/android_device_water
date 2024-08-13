@@ -98,4 +98,14 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
+# Drm
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.4  
+# Mtk plpath utils
+PRODUCT_PACKAGES += \
+    mtk_plpath_utils \
+    mtk_plpath_utils.recovery
+# fstab
+PRODUCT_PACKAGES += \
+    fstab.default.vendor_ramdisk
 
