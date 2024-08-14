@@ -5,3 +5,4 @@ ro.sys.usb.storage.type=mtp
 persist.service.adb.enable=1
 persist.service.debuggable=1
 ro.adb.secure=0
+ro.boot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc
