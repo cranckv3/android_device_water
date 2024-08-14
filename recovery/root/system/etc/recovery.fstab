@@ -88,6 +88,9 @@ product /product ext4 ro wait,avb,logical,first_stage_mount,slotselect
 
 /dev/block/platform/bootdevice/by-name/boot_para /boot_para emmc defaults defaults
 /dev/block/platform/bootdevice/by-name/odmdtbo /odmdtbo emmc defaults defaults
+
+/external_sd              vfat      /dev/block/mmcblk1p1 /dev/block/mmcblk1                  flags=storage;wipeingui;removable
+/usb-otg                  auto      /dev/block/sda1 /dev/block/sda                           flags=display="USB-OTG";storage;wipeingui;removable
 /dev/block/platform/bootdevice/by-name/dtbo /dtbo emmc defaults defaults
 
 /dev/block/platform/bootdevice/by-name/vbmeta /vbmeta emmc defaults defaults
