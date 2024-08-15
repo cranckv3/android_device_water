@@ -109,9 +109,6 @@ BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
-# Load vendor modules
-TW_LOAD_VENDOR_MODULES := "bt_drv_connac1x.ko connfem.ko fmradio_drv_mt6631.ko fpsgo.ko gps_drv.ko met.ko mt6357-accdet.ko wlan_drv_gen4m.ko wmt_chrdev_wifi.ko wmt_drv.ko
-
 # AB
 AB_OTA_UPDATER := true
 
@@ -161,6 +158,7 @@ TW_NO_FASTBOOT_BOOT := true
 TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_LPDUMP := true
 TW_INCLUDE_PYTHON := true
+TW_LOAD_VENDOR_MODULES := "bt_drv_connac1x.ko connfem.ko fmradio_drv_mt6631.ko fpsgo.ko gps_drv.ko met.ko mt6357-accdet.ko wlan_drv_gen4m.ko wmt_chrdev_wifi.ko wmt_drv.ko
 
 # Additional Target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
