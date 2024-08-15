@@ -19,6 +19,8 @@
 # Allow building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 DEVICE_PATH := device/xiaomi/water
 
 # Display
