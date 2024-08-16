@@ -161,8 +161,6 @@ TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_LPDUMP := true
 TW_INCLUDE_PYTHON := true
 TW_FRAMERATE := 60
-TW_LOAD_VENDOR_MODULES := true
-TW_LOAD_VENDOR_MODULES := "bt_drv_connac1x.ko connfem.ko fmradio_drv_mt6631.ko fpsgo.ko gps_drv.ko met.ko mt6357-accdet.ko wlan_drv_gen4m.ko wmt_chrdev_wifi.ko wmt_drv.ko
 
 # Additional Target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
