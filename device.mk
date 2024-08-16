@@ -107,3 +107,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     mtk_plpath_utils \
     mtk_plpath_utils.recovery
+
+# fstab
+PRODUCT_PACKAGES += \
+    fstab.default.vendor_ramdisk
+
