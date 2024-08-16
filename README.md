@@ -8,7 +8,7 @@ Both devices are essentially unified under internal codename, WATER.
 | Basic                   | Spec Sheet                                                                                                                     |
 | -----------------------:|:------------------------------------------------------------------------------------------------------------------------------ |
 | CPU                     | Octa-core                                                                                                                      |
-| Chipset                 | MediaTek MT6765 Helio G36 (12 nm)                                                                                                            |
+| Chipset                 | MediaTek MT6765V Helio G36 (12 nm)                                                                                                            |
 | GPU                     | PowerVR GE8320                                                                                                                   |
 | Memory                  | 3/6 GB RAM                                                                                                                   |
 | Shipped Android Version | Android 13                                                                                                                            |
