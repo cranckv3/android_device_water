@@ -21,4 +21,4 @@ Both devices are essentially unified under internal codename, WATER.
 # Device picture 
 ![xiaomi-redmi-a2-1](https://github.com/user-attachments/assets/dded9f27-ca55-4c60-9834-6a1f3d72de71)
 
-![xiaomi-redmi-a2-1](https://github.com/user-attachments/assets/b8357f9f-9097-4989-b92e-dfd784f0dccb)
+![xiaomi-poco-c51-1](https://github.com/user-attachments/assets/8b6ff2a3-1b0e-45bc-ba7a-eb1e6fc9c677)
