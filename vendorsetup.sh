@@ -1,1 +1,1 @@
-git clone https://android.googlesource.com/platform/external/gflags platform/external/gflags
+git clone https://android.googlesource.com/platform/external/gflags   external/gflags
