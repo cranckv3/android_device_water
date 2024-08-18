@@ -17,3 +17,6 @@ Both devices are essentially unified under internal codename, WATER.
 | Display                 | 720 x 1600 pixels, 20:9 ratio (~269 ppi density)                                                                              |
 | Camera (Back)(Main)     | 8 MP, f/2.0, (wide) 0.08 MP (auxiliary lens)                                                                >
 | Camera (Front)          | 5 MP, f/2.2                                                                                      |
+
+# Device picture 
+https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-a2-1.jpg
