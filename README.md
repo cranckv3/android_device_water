@@ -19,4 +19,6 @@ Both devices are essentially unified under internal codename, WATER.
 | Camera (Front)          | 5 MP, f/2.2                                                                                      |
 
 # Device picture 
-https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-a2-1.jpg
+![xiaomi-redmi-a2-1](https://github.com/user-attachments/assets/dded9f27-ca55-4c60-9834-6a1f3d72de71)
+
+![xiaomi-redmi-a2-1](https://github.com/user-attachments/assets/b8357f9f-9097-4989-b92e-dfd784f0dccb)
