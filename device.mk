@@ -21,8 +21,6 @@ LOCAL_PATH := device/xiaomi/water
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# Enable project quotas and casefolding for emulated storage without sdcardfs
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
@@ -121,7 +119,3 @@ PRODUCT_PACKAGES += \
 # Keystore2
 PRODUCT_PACKAGES += \
     android.system.keystore2
-
-# Otacert
-PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(DEVICE_PATH)/security/miui_releasekey
