@@ -1,5 +1,1 @@
-git clone https://github.com/Microsoft/vcpkg.git
-cd vcpkg
-./bootstrap-vcpkg.sh
-./vcpkg integrate install
-vcpkg install gflags
+git clone https://android.googlesource.com/platform/external/gflags platform/external/gflags
