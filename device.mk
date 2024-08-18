@@ -124,4 +124,4 @@ PRODUCT_PACKAGES += \
 
 # Otacert
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(DEVICE_PATH)/security/releasekey
+    $(DEVICE_PATH)/security/miui_releasekey
