@@ -8,7 +8,7 @@
 
 /vbmeta           emmc    /dev/block/platform/bootdevice/by-name/vbmeta           flags=backup=1;display="VBMeta";flashimg=1
 
-/data             f2fs    /dev/block/platform/bootdevice/by-name/userdata         noatime,nosuid,nodev,discard,noflush_merge,reserve_root=134217,resgid=1065,inlinecrypt,alloc_mode=reuse,fsync_mode=nobarrier latemount,wait,check,quota,reservedsize=128M,formattable,resize,checkpoint=fs,keydirectory=/metadata/vold/metadata_encryption
+/data             f2fs    /dev/block/platform/bootdevice/by-name/userdata         flags=display="Userdata [ data ]";fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption
 
 /metadata         ext4    /dev/block/platform/bootdevice/by-name/metadata         flags=display="Metadata"
 
