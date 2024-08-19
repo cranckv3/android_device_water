@@ -3,3 +3,4 @@ service vendor.keymint-mitee /vendor/bin/hw/android.hardware.security.keymint@1.
 	user system
 	group system drmrpc
 	disabled
+	seclabel u:r:recovery:s0
