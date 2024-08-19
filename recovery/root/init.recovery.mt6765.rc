@@ -1,6 +1,7 @@
 import /keymint.service.mitee.rc
 import /tee-supplicant.rc
 import /miteelog.rc
+import /snapuserd.rc
 
 on init
     setprop sys.usb.configfs 1
