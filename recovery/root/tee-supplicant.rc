@@ -1,8 +1,10 @@
 # For MTK DRM integration:
 service tee-supplicant /vendor/bin/tee-supplicant
     class core
+    user root
+    group root
     disabled
-
+    seclabel u:r:recovery:s0
 
 on fs
     write /proc/bootprof "init tee-supplicant"
