@@ -81,7 +81,11 @@ service keymaster_attestation-1-1 /vendor/bin/hw/vendor.mediatek.hardware.keymas
     seclabel u:r:recovery:s0
 
 on property:hwservicemanager.ready=true
+    exec_start wait_for_keymaster
     start vendor.keymint-mitee
+    start netd
+    start zygote
+    start zygote_secondary
     start vendor.gatekeeper-1-0
     start tee-supplicant
     start keymaster_attestation-1-1
@@ -91,6 +95,9 @@ on property:hwservicemanager.ready=true
 
 on property:ro.crypto.state=unsupported
     stop vendor.keymint-mitee
+    stop netd
+    stop zygote
+    stop zygote_secondary
     stop vendor.gatekeeper-1-0
     stop tee-supplicant
     stop keymaster_attestation-1-1
@@ -99,6 +106,9 @@ on property:ro.crypto.state=unsupported
 
 on property:ro.crypto.state=unencrypted
     stop vendor.keymint-mitee
+    stop netd
+    stop zygote
+    stop zygote_secondary
     stop vendor.gatekeeper-1-0
     stop tee-supplicant
     stop keymaster_attestation-1-1
@@ -108,6 +118,9 @@ on property:ro.crypto.state=unencrypted
 
 on property:twrp.decrypt.done=true
     stop vendor.keymint-mitee
+    stop netd
+    stop zygote
+    stop zygote_secondary
     stop vendor.gatekeeper-1-0
     stop tee-supplicant
     stop keymaster_attestation-1-1
