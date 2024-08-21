@@ -80,35 +80,49 @@ service keymaster_attestation-1-1 /vendor/bin/hw/vendor.mediatek.hardware.keymas
     disabled
     seclabel u:r:recovery:s0
 
+on nonencrypted
+    class_start main
+    class_start late_start
+
+on property:vold.decrypt=trigger_default_encryption
+    start defaultcrypto
+
+on property:vold.decrypt=trigger_encryption
+    start surfaceflinger
+    start encrypt
+
 on property:hwservicemanager.ready=true
-    exec_start wait_for_keymaster
-    start vendor.keymint-mitee
+    exec_start update_verifier_nonencrypted
     start netd
     start zygote
     start zygote_secondary
+    start vendor.keymint-mitee
     start vendor.gatekeeper-1-0
     start tee-supplicant
     start keymaster_attestation-1-1
+    exec_start wait_for_keymaster
     start miteelog
     start hwservicemanager
 
 
-on property:ro.crypto.state=unsupported
-    stop vendor.keymint-mitee
+on zygote-start && property:ro.crypto.state=unsupported
+    exec_start update_verifier_nonencrypted
     stop netd
     stop zygote
     stop zygote_secondary
+    stop vendor.keymint-mitee
     stop vendor.gatekeeper-1-0
     stop tee-supplicant
     stop keymaster_attestation-1-1
     stop miteelog
     stop hwservicemanager
 
-on property:ro.crypto.state=unencrypted
-    stop vendor.keymint-mitee
+on zygote-start && property:ro.crypto.state=unencrypted
+    exec_start update_verifier_nonencrypted
     stop netd
     stop zygote
     stop zygote_secondary
+    stop vendor.keymint-mitee
     stop vendor.gatekeeper-1-0
     stop tee-supplicant
     stop keymaster_attestation-1-1
@@ -117,10 +131,11 @@ on property:ro.crypto.state=unencrypted
 
 
 on property:twrp.decrypt.done=true
-    stop vendor.keymint-mitee
+    exec_start update_verifier_nonencrypted
     stop netd
     stop zygote
     stop zygote_secondary
+    stop vendor.keymint-mitee
     stop vendor.gatekeeper-1-0
     stop tee-supplicant
     stop keymaster_attestation-1-1
