@@ -175,7 +175,7 @@ TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_LPDUMP := true
 TW_INCLUDE_PYTHON := true
 TW_FRAMERATE := 60
-PB_TORCH_PATH := "/sys/class/leds/flashlight"
+PB_TORCH_PATH := "/sys/class/flashlight_core/flashlight"
 
 
 
