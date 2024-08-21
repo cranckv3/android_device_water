@@ -45,15 +45,12 @@ TARGET_USES_UEFI := true
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
 TW_CRYPTO_FS_TYPE := "f2fs"
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
 TW_CRYPTO_MNT_POINT := "/data"
 TW_CRYPTO_FS_OPTIONS := "noatime,nosuid,nodev,discard,noflush_merge,reserve_root=134217,resgid=1065,inlinecrypt,alloc_mode=reuse,fsync_mode=nobarrier latemount,wait,check,quota,reservedsize=128M,formattable,resize,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption"
-
 BOARD_USES_METADATA_PARTITION := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
 
 TW_USE_FSCRYPT_POLICY := 2
 PLATFORM_VERSION := 14
@@ -166,8 +163,8 @@ TARGET_USES_LOGD := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_USB_STORAGE := true
-TW_MAX_BRIGHTNESS := 255
-TW_DEFAULT_BRIGHTNESS := 125
+TW_MAX_BRIGHTNESS := 1000
+TW_DEFAULT_BRIGHTNESS := 500
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_LIBRESETPROP :=true
