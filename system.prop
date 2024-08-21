@@ -5,7 +5,7 @@ ro.boot.dynamic_partitions=true
 ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Usb
-ro.sys.usb.storage.type=mtp
+ro.sys.usb.storage.type=mtp,adb
 
 # Adb
 persist.service.adb.enable=1
