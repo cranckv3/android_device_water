@@ -21,5 +21,4 @@ ro.vendor.mediatek.platform=MT6765
 # Timezone
 persist.sys.timezone="Asia/Jakarta"
 
-# Fastbootd
-ro.twrp.fastbootd=1
+
