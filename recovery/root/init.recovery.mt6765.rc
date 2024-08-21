@@ -3,10 +3,11 @@ import /tee-supplicant.rc
 import /miteelog.rc
 import /snapuserd.rc
 import /keymaster_attestation@1.1-service.rc
+import /factory_init.rc
+
 
 on init
     setprop sys.usb.configfs 1
-    setprop sys.usb.controller "11201000.usb0"
     setprop sys.usb.ffs.aio_compat 1
     export LD_LIBRARY_PATH /system/lib:/vendor/lib:/vendor/lib/hw
     setprop crypto.ready 1
