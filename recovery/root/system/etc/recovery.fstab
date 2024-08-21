@@ -6,12 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "vendor/mediatek/proprietary/hardware/fstab/mt6765/fstab.in.mt6765" 2
 # 134 "vendor/mediatek/proprietary/hardware/fstab/mt6765/fstab.in.mt6765"
-system /system erofs ro wait,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey,slotselect
-system /system ext4 ro wait,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey,slotselect
-
-vendor /vendor erofs ro wait,avb,logical,first_stage_mount,slotselect
-vendor /vendor ext4 ro wait,avb,logical,first_stage_mount,slotselect
-
-
-product /product erofs ro wait,avb,logical,first_stage_mount,slotselect
-product /product ext4 ro wait,avb,logical,first_stage_mount,slotselect
+#<src>                                           <mnt_point>           <type>   <mnt_flags and options>                                         <fs_mgr_flags>
+dev/block/platform/bootdevice/by-name/system    /system                ext4     ro                                                              wait,avb=vbmeta,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
+/dev/block/platform/bootdevice/by-name/vendor    /vendor               ext4     ro                                                              wait,avb,first_stage_mount
+/dev/block/platform/bootdevice/by-name/misc      /misc                 emmc     defaults                                                        defaults
+/dev/block/platform/bootdevice/by-name/userdata  /data                 ext4     noatime,nosuid,nodev,noauto_da_alloc,errors=panic,inlinecrypt wait,check,formattable,quota,latemount,reservedsize=128m,fileencryption=aes-256-xts
+/dev/block/platform/bootdevice/by-name/product   /product              ext4     ro                                                              wait,avb,logical,first_stage_mount,slotselect
