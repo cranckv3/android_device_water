@@ -1,7 +1,7 @@
 #
 # Copyright (C) 2020 The Android Open Source Project
-# Copyright (C) 2020 The TWRP Open Source Project
-# Copyright (C) 2020 SebaUbuntu's TWRP device tree generator
+# Copyright (C) 2020 The PBRP Open Source Project
+# Copyright (C) 2020 SebaUbuntu's PBRP device tree generator
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -9,7 +9,7 @@
 #
 #     http://www.apache.org/licenses/LICENSE-2.0
 #
-# Unless required by applicable law or agreed to in writing, software
+# Unless required by applicable law or agreed to in writing, sofPBare
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
@@ -44,14 +44,15 @@ TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
 # Crypto
-TW_CRYPTO_FS_TYPE := "f2fs"
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
-TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
-TW_CRYPTO_MNT_POINT := "/data"
-TW_CRYPTO_FS_OPTIONS := "noatime,nosuid,nodev,discard,noflush_merge,reserve_root=134217,resgid=1065,inlinecrypt,alloc_mode=reuse,fsync_mode=nobarrier latemount,wait,check,quota,reservedsize=128M,formattable,resize,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption"
+PB_INCLUDE_CRYPTO := true
+PB_CRYPTO_FS_TYPE := "f2fs"
+PB_INCLUDE_FBE_METADATA_DECRYPT := true
+PB_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
+PB_CRYPTO_MNT_POINT := "/data"
+PB_CRYPTO_FS_OPTIONS := "noatime,nosuid,nodev,discard,noflush_merge,reserve_root=134217,resgid=1065,inlinecrypt,alloc_mode=reuse,fsync_mode=nobarrier latemount,wait,check,quota,reservedsize=128M,formattable,resize,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption"
 BOARD_USES_METADATA_PARTITION := true
 
-TW_USE_FSCRYPT_POLICY := 2
+PB_USE_FSCRYPT_POLICY := 2
 PLATFORM_VERSION := 14
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
@@ -133,7 +134,7 @@ TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Recovery
-TW_THEME := portrait_hdpi
+PB_THEME := portrait_hdpi
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
@@ -142,38 +143,39 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
 
-# TWRP specific build flags
+# PBRP specific build flags
 RECOVERY_SDCARD_ON_DATA := true
-TW_NO_SCREEN_BLANK := true
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_INCLUDE_NTFS_3G := true
-TW_INCLUDE_FASTBOOTD := true
-TW_USE_TOOLBOX := true
-TW_EXTRA_LANGUAGES := true
-TW_DEFAULT_LANGUAGE := en
-TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_HAS_MTP := true
-TW_MTP_DEVICE := /dev/mtp_usb
+PB_NO_SCREEN_BLANK := true
+PB_SCREEN_BLANK_ON_BOOT := true
+PB_INCLUDE_NTFS_3G := true
+PB_INCLUDE_FASTBOOTD := true
+PB_USE_TOOLBOX := true
+PB_EXTRA_LANGUAGES := true
+PB_DEFAULT_LANGUAGE := en
+PB_EXCLUDE_DEFAULT_USB_INIT := true
+PB_HAS_MTP := true
+PB_MTP_DEVICE := /dev/mtp_usb
 TARGET_USES_MKE2FS := true
-TW_EXCLUDE_TWRPAPP := true
-TW_EXCLUDE_APEX := true
-TWRP_INCLUDE_LOGCAT := true
+PB_EXCLUDE_PBRPAPP := true
+PB_EXCLUDE_APEX := true
+PBRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_USB_STORAGE := true
-TW_MAX_BRIGHTNESS := 1000
-TW_DEFAULT_BRIGHTNESS := 500
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_INCLUDE_REPACKTOOLS := true
-TW_INCLUDE_LIBRESETPROP :=true
-TW_INCLUDE_RESETPROP := true
-TW_BACKUP_EXCLUSIONS := /data/fonts
-TW_NO_FASTBOOT_BOOT := true
-TW_INCLUDE_LPTOOLS := true
-TW_INCLUDE_LPDUMP := true
-TW_INCLUDE_PYTHON := true
-TW_FRAMERATE := 60
+PB_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+PB_USB_STORAGE := true
+PB_MAX_BRIGHTNESS := 1000
+PB_DEFAULT_BRIGHTNESS := 500
+PB_INPUT_BLACKLIST := "hbtp_vm"
+PB_INCLUDE_REPACKTOOLS := true
+PB_INCLUDE_LIBRESETPROP :=true
+PB_INCLUDE_RESETPROP := true
+PB_BACKUP_EXCLUSIONS := /data/fonts
+PB_NO_FASTBOOT_BOOT := true
+PB_INCLUDE_LPTOOLS := true
+PB_INCLUDE_LPDUMP := true
+PB_INCLUDE_PYTHON := true
+PB_FRAMERATE := 60
+PB_TORCH_PATH := "/sys/class/leds/flashlight"
 
 
 
@@ -190,7 +192,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     android.hardware.health@2.0-impl-default \
     android.hardware.boot@1.0
 
-TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+PB_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator-V1-ndk_platform.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.graphics.common@1.0.so \
