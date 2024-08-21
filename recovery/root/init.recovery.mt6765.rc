@@ -80,17 +80,6 @@ service keymaster_attestation-1-1 /vendor/bin/hw/vendor.mediatek.hardware.keymas
     disabled
     seclabel u:r:recovery:s0
 
-on nonencrypted
-    class_start main
-    class_start late_start
-
-on property:vold.decrypt=trigger_default_encryption
-    start defaultcrypto
-
-on property:vold.decrypt=trigger_encryption
-    start surfaceflinger
-    start encrypt
-
 on property:hwservicemanager.ready=true
     exec_start update_verifier_nonencrypted
     start netd
@@ -103,9 +92,11 @@ on property:hwservicemanager.ready=true
     exec_start wait_for_keymaster
     start miteelog
     start hwservicemanager
+    start surfaceflinger
+    start encrypt
+    start defaultcrypto
 
-
-on zygote-start && property:ro.crypto.state=unsupported
+on property:ro.crypto.state=unsupported
     exec_start update_verifier_nonencrypted
     stop netd
     stop zygote
@@ -116,8 +107,11 @@ on zygote-start && property:ro.crypto.state=unsupported
     stop keymaster_attestation-1-1
     stop miteelog
     stop hwservicemanager
+    stop surfaceflinger
+    stop encrypt
+    stop defaultcrypto
 
-on zygote-start && property:ro.crypto.state=unencrypted
+on property:ro.crypto.state=unencrypted
     exec_start update_verifier_nonencrypted
     stop netd
     stop zygote
@@ -128,7 +122,9 @@ on zygote-start && property:ro.crypto.state=unencrypted
     stop keymaster_attestation-1-1
     stop miteelog
     stop hwservicemanager
-
+    stop surfaceflinger
+    stop encrypt
+    stop defaultcrypto
 
 on property:twrp.decrypt.done=true
     exec_start update_verifier_nonencrypted
@@ -141,6 +137,9 @@ on property:twrp.decrypt.done=true
     stop keymaster_attestation-1-1
     stop miteelog
     stop hwservicemanager
+    stop surfaceflinger
+    stop encrypt
+    stop defaultcrypto
 
 on boot
     start health-hal-2-1
