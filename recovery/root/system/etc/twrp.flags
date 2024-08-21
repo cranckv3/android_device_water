@@ -6,12 +6,7 @@
 /system_ext_image	emmc	/dev/block/platform/bootdevice/by-name/system_ext	flags=backup=0;flashimg;display="System_EXT Image"
 /vendor_dlkm_image	emmc	/dev/block/platform/bootdevice/by-name/vendor_dlkm      flags=backup=0;flashimg;display="Vendor_DLKM Image"
 
-/system                   erofs     system                                                   flags=display=system;logical;slotselect
-/system                   ext4      system                                                   flags=display=system;logical;slotselect
-/vendor                   erofs     vendor                                                   flags=display=vendor;logical;slotselect
-/vendor                   ext4      vendor                                                   flags=display=vendor;logical;slotselect
-/product                  erofs     product                                                  flags=display=product;logical;slotselect
-/product                  ext4      product                                                  flags=display=product;logical;slotselect
+
 /metadata                 ext4      /dev/block/platform/bootdevice/by-name/metadata          flags=display=metadata
 /data                     f2fs      /dev/block/platform/bootdevice/by-name/userdata          flags=display=data
 /protect_f                ext4      /dev/block/platform/bootdevice/by-name/protect1          flags=display=protect_f
