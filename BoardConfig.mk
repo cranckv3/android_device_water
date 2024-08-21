@@ -44,7 +44,6 @@ TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
 # Crypto
-TW_INCLUDE_CRYPTO := true
 TW_CRYPTO_FS_TYPE := "f2fs"
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
