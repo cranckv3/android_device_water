@@ -25,10 +25,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-# V A/B
-ENABLE_VIRTUAL_AB := true
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-
 # A/B
 AB_OTA_PARTITIONS += \
     boot \
