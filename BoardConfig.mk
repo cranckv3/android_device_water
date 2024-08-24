@@ -44,12 +44,12 @@ TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
 # Crypto
-# TW_INCLUDE_CRYPTO := true
-# TW_CRYPTO_FS_TYPE := "f2fs"
-# TW_INCLUDE_FBE_METADATA_DECRYPT := true
-# TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
-# TW_CRYPTO_MNT_POINT := "/data"
-# TW_CRYPTO_FS_OPTIONS := "noatime,nosuid,nodev,discard,noflush_merge,reserve_root=134217,resgid=1065,inlinecrypt,alloc_mode=reuse,fsync_mode=nobarrier latemount,wait,check,quota,reservedsize=128M,formattable,resize,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption"
+TW_INCLUDE_CRYPTO := true
+TW_CRYPTO_FS_TYPE := "f2fs"
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
+TW_CRYPTO_MNT_POINT := "/data"
+TW_CRYPTO_FS_OPTIONS := "noatime,nosuid,nodev,discard,noflush_merge,reserve_root=134217,resgid=1065,inlinecrypt,alloc_mode=reuse,fsync_mode=nobarrier latemount,wait,check,quota,reservedsize=128M,formattable,resize,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption"
 BOARD_USES_METADATA_PARTITION := true
 
 TW_USE_FSCRYPT_POLICY := 2
