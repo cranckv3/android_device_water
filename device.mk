@@ -21,6 +21,21 @@ LOCAL_PATH := device/xiaomi/water
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 31
+
+# API
+PRODUCT_SHIPPING_API_LEVEL := 31
+#BOARD_SHIPPING_API_LEVEL := 30
+
+
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
+# V A/B
+ENABLE_VIRTUAL_AB := true
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
 # A/B
 AB_OTA_PARTITIONS += \
     boot \
