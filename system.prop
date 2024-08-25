@@ -5,7 +5,7 @@ ro.boot.dynamic_partitions=true
 ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Usb
-ro.sys.usb.storage.type=mtp,adb
+persist.sys.usb.config=mtp,adb
 
 # Adb
 persist.service.adb.enable=1
@@ -19,6 +19,6 @@ ro.boot.boot_devices=bootdevice,soc/11230000.mmc,11230000.mmc
 ro.vendor.mediatek.platform=MT6765
 
 # Timezone
-persist.sys.timezone="Asia/Jakarta"
+persist.sys.timezone="Asia/Nepal"
 
 
