@@ -16,3 +16,5 @@ vendor                                           /vendor               ext4     
 
 product                                          /product              erofs                   ro wait,avb,logical,first_stage_mount,slotselect
 product                                          /product              ext4                    ro wait,avb,logical,first_stage_mount,slotselect
+
+/dev/block/platform/bootdevice/by-name/userdata  /data                 f2fs                    nnoatime,nosuid,nodev,discard,noflush_merge,reserve_root=134217,resgid=1065,alloc_mode=reuse,fsync_mode=nobarrier latemount,wait,check,quota,reservedsize=128M,formattable,resize,checkpoint=fs,
