@@ -23,6 +23,9 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 DEVICE_PATH := device/xiaomi/water
 
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/device/xiaomi/water/system.prop
+
+
 # Display
 TARGET_SCREEN_DENSITY := 320
 
